@@ -1,3 +1,4 @@
+import numpy as np
 inputs=[1,2,3,2.5]
 
 weights=[[0.2,0.8,-0.5,1.0],
@@ -6,13 +7,6 @@ weights=[[0.2,0.8,-0.5,1.0],
 
 bias=[2,3,0.5]
 
-layer_output=[]
+layer_output=np.dot(weights, inputs) + bias
 
-for n_weight, n_bias in zip(weights,bias):
-    n_output=0
-    for n_input,weight in zip(inputs,n_weight):
-        n_output += n_input*weight
-    n_output += n_bias
-    layer_output.append(n_output)
-    
 print(layer_output)
